@@ -4,29 +4,24 @@
 	<meta charset="UTF-8">
     <title>CashPrizes | Trash Leads Surplus and More</title>
     <style>
-    	fieldset { margin: 20px; padding: 0 10px 10px;  border: 1px solid #666; display: inline-block;
-    	border-radius: 8px;  box-shadow: 0 0 10px #666;  padding-top: 10px;}
-    	/* legend { padding: 2px 4px; background: #fff;}
-    	fieldset > legend { float: left; margin-top: -20px;}
-    	fieldset > legend + * { clear: both;} */
-    	body { font-size: 24px; font-family:Courier New; text-align: center; background: white;}
-
-	</style>
+    	fieldset {margin: 20px; padding: 0 10px 10px;  border: 1px solid #666; display: inline-block; border-radius: 8px;  box-shadow: 0 0 10px #666;  padding-top: 10px;}
+    	body {font-size: 24px; font-family:Courier New; text-align: center; background: white;}
+  	</style>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
   <body>
     <h1>Fill Out This Form For A Chance <br> To Win Cash Prizes 😈</h1>
     <form id="thisForm" class="input" type="text" placeholder="Enter your feedback...">
       <fieldset>
-      First name: <input type="text" name="first_name" id="first_name" class="txt" onClick="myFunction()"/> <br />
-      Last name: &nbsp;<input type="text" name="last_name" id="last_name" class="txt" /> <br />
-      Phone: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="phone_1" name="phone_1" class="txt" /> <br />
-      Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  id="email" name="email" class="txt" /> <br />
-      Zip Code: &nbsp;&nbsp;<input type="text" name="postal_code" id="postal_code" class="txt" /> <br /><br />
-      <input type="checkbox" name="disclaimer" /> By clicking this button, </br>I hereby consent to delusions of grandeur...
-      <br /> <br />
-      <!-- <input type="submit" value="Start" onclick="submit()"> -->
-      <button type="submit" id="submitButton">Submit</button>
+        First name: <input type="text" name="first_name" id="first_name" class="txt" onClick="myFunction()"/> <br />
+        Last name: &nbsp;<input type="text" name="last_name" id="last_name" class="txt" /> <br />
+        Phone: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="phone_1" name="phone_1" class="txt" /> <br />
+        Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  id="email" name="email" class="txt" /> <br />
+        Zip Code: &nbsp;&nbsp;<input type="text" name="postal_code" id="postal_code" class="txt" /> <br /><br />
+        <input type="checkbox" name="disclaimer" /> By clicking this button, </br>I hereby consent to delusions of grandeur...
+        <br /> <br />
+        <!-- <input type="submit" value="Start" onclick="submit()"> -->
+        <button type="submit" id="submitButton">Submit</button>
       </fieldset>
     </form>
 
@@ -57,7 +52,7 @@
       var SubmitFeedback = function() {
         $.ajax({
             type: "POST",
-            url: "https://app.leadconduit.com/flows/5f441019fb577095e08dad84/sources/56ddf55401a7c994452e8ca5/submit",
+            url: "https://app.leadconduit.com/flows/5f441019fb577095e08dad84/sources/603effc14f3b8a066bf0af46/submit",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(
               {
@@ -66,6 +61,7 @@
                 email: $(email).val(),
                 phone_1: $(phone_1).val(),
                 postal_code: $(postal_code).val(),
+                campaign_id: "666",
                 trustedform_cert_url: document.getElementById("xxTrustedFormToken_0").value
               }
             ),
